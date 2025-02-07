@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Rekap Nilai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?education,school') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        marquee {
+            font-size: 24px;
+            font-weight: bold;
+            color: yellow;
+        }
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 200px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="home">
+        <marquee>SELAMAT DATANG PADA APLIKASI REKAP NILAI SISWA SMA N 10 OKU</marquee>
+        <button class="button" onclick="showPage('jurusanPage')">Start</button>
+    </div>
+
+    <div class="container hidden" id="jurusanPage">
+        <h2>Pilih Jurusan</h2>
+        <button class="button" onclick="showPage('ipaPage')">IPA</button>
+        <button class="button" onclick="showPage('ipsPage')">IPS</button>
+    </div>
+
+    <div class="container hidden" id="ipaPage">
+        <h2>Jurusan IPA</h2>
+        <button class="button" onclick="showPage('ipaX')">Kelas X</button>
+        <button class="button" onclick="showPage('ipaXI')">Kelas XI</button>
+        <button class="button" onclick="showPage('ipaXII')">Kelas XII</button>
+        <button class="button" onclick="showPage('jurusanPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipsPage">
+        <h2>Jurusan IPS</h2>
+        <button class="button" onclick="showPage('ipsX')">Kelas X</button>
+        <button class="button" onclick="showPage('ipsXI')">Kelas XI</button>
+        <button class="button" onclick="showPage('ipsXII')">Kelas XII</button>
+        <button class="button" onclick="showPage('jurusanPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipaX">
+        <h2>Kelas X IPA</h2>
+        <a href="https://forms.gle/n76H4piapkjbroNG9" class="button" target="_blank">Semester 1</a>
+        <a href="https://forms.gle/LicmMFiRQjrPaJ2W9" class="button" target="_blank">Semester 2</a>
+        <button class="button" onclick="showPage('ipaPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipaXI">
+        <h2>Kelas XI IPA</h2>
+        <a href="https://forms.gle/TH7qWLiB1iwYBdmj7" class="button" target="_blank">Semester 1</a>
+        <a href="https://forms.gle/EWHojiRytA8ekzY69" class="button" target="_blank">Semester 2</a>
+        <button class="button" onclick="showPage('ipaPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipaXII">
+        <h2>Kelas XII IPA</h2>
+        <a href="https://forms.gle/SiLytEWaAhifFgSM6" class="button" target="_blank">Semester 1</a>
+        <button class="button" onclick="showPage('ipaPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipsX">
+        <h2>Kelas X IPS</h2>
+        <a href="https://forms.gle/EAfrauusKEvfwwd57" class="button" target="_blank">Semester 1</a>
+        <a href="https://forms.gle/gJZtRshb9fs2EVey9" class="button" target="_blank">Semester 2</a>
+        <button class="button" onclick="showPage('ipsPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipsXI">
+        <h2>Kelas XI IPS</h2>
+        <a href="https://forms.gle/qpKPJChiNMTkjCb38" class="button" target="_blank">Semester 1</a>
+        <a href="https://forms.gle/3huwZyG9DAqjf2vB8" class="button" target="_blank">Semester 2</a>
+        <button class="button" onclick="showPage('ipsPage')">Kembali</button>
+    </div>
+
+    <div class="container hidden" id="ipsXII">
+        <h2>Kelas XII IPS</h2>
+        <a href="https://forms.gle/7GBcfiezG9LBgMo59" class="button" target="_blank">Semester 1</a>
+        <button class="button" onclick="showPage('ipsPage')">Kembali</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.container').forEach(page => {
+                page.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
